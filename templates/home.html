@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="text-gray-600 body-font">
+  <form action='.' method='POST' class="form">{% csrf_token %}
+    {{ form.as_p}}
+    <input type='submit' value='Search' class="btn btn-light" />
+  </form>
+    <div class="container px-5 py-24 mx-auto"  id="ecomm_list">
+      <p class="randomP">**The images are randomly comming from unsplash.com</p>
+      <div class="flex flex-wrap -m-4">
+        {% if object_list|length %}
+          {% for instance in object_list %}
+              <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://source.unsplash.com/1600x900/?{{instance.name}},{{instance.brand}}">
+                  </a>
+                  <div class="mt-4">
+                  <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">ID:- {{instance.id}}</h3>
+                  <h2 class="text-gray-900 title-font text-lg font-medium">Name:- {{instance.name}}</h2>
+                  <p class="mt-1">Price:- Rs. {{instance.price}}</p>
+                  </div>
+              </div>
+          {% endfor %}
+        {% else %}
+              <p>No data found.</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %} 

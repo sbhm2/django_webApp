@@ -1,0 +1,33 @@
+@keyframes example {
+    0%   {background-color: red;}
+  25%  {background-color: green;}
+  50%  {background-color: blue;}
+  100% {background-color: red;}
+}
+
+/* The element to apply the animation to */
+body {
+    background-color: red;
+    animation-name: example;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+}
+  
+.form {
+    display: flex;
+    margin: 5px 0;
+}
+
+.btn {
+    height: 50px !important;
+}
+.inputField {
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.randomP {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 0px !important;
+}

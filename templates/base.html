@@ -1,0 +1,19 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'ecomm/css/style.css' %}" type="text/css" rel="stylesheet">
+    <title>SBNRI Ecommerce</title>
+</head>
+<body>
+   <!-- {% include 'navbar.html' %} -->
+   {% block content %}
+    replace me
+   {% endblock %} 
+
+    </body>
+    <script src="{% static 'ecomm/js/background.js' %}"></script>
+</html>
